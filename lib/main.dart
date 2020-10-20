@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/auth_screen.dart';
+import 'package:myapp/home_screen.dart';
+
+import 'util/global.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,50 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Careem',
+      title: 'Corontine Diary',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        // fontFamily: 'Montserrat',
+        accentColor: ThemeConstants.primaryColor,
+        primarySwatch: Colors.grey,
       ),
-      home: MyHomePage(title: 'Hail a ride'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ListView.builder(itemBuilder: (context, index) {
-        return Card(
-          child: ListTile(title: Text("You are at index $index")),
-        );
-      }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      home: MyHomePage(title: 'My Qurantine Diary'),
     );
   }
 }
